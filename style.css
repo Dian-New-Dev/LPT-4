@@ -7,6 +7,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 
 html {
@@ -16,12 +17,31 @@ html {
 
 h1 {
     font-family: "Josefin Sans", sans-serif;
-    font-size: 80px;
+    font-size: 50px;
     color: #A91D3A;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+
+        font-size: 80px;
+
+    }
+
 }
 
 h2, h3, h4, h5, h6, a, button {
     font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+@media (min-width: 1024px) {
+    h2 {
+        font-size: 40px;
+    }
 }
 
 h6 {
@@ -76,6 +96,12 @@ header {
     align-items: center;
 }
 
+@media (max-width: 1024px) {
+    .nav-desktop {
+        display: none;
+    }
+}
+
 button {
     border: none;
     
@@ -98,19 +124,119 @@ main section {
     width: 100%;
 }
 
+.nav-mobile {
+    display: flex;
+
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+
+}
+
+@media (min-width: 1024px) {
+    .nav-mobile {
+        display: none;
+    }
+}
+
+.nav-mobile a {
+    color: white;
+    font-size: 16px;
+}
+
+.hamb-lines {
+width: 30px;
+border: 1px solid black;
+margin-bottom: 5px;
+transform: translateY(0) rotate(0deg);
+transition: transform 0.5s ease;
+}
+
+.hamb-menu-panel {
+display: block;
+position: absolute;
+top: 50px;
+right: -400px;
+background-color: #C73659;
+color: white;
+font-size: 32px;
+font-family: "Balthazar", serif;
+transition: right 0.5s ease;
+width: 100px;
+
+}
+
+.hamb-menu-panel ul {
+padding: 0;
+margin: 0;
+}
+
+.li-wrapper {
+border-bottom: 1px solid white;
+padding: 20px;
+}
+
+.li-wrapper li {
+list-style-type: none;
+}
+
+
 .main1-hero {
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 0% 0%;
+    background-size: cover;
+    background-position: 40% 0%;
+    background-color: #c7365854;
+    background-blend-mode: multiply;
+}
+
+@media (max-width: 800px) {
+    .main1-hero {
+        background-position: 60% 0%;
+    }
+
+}
+
+@media (min-width: 1100px) {
+    .main1-hero {
+        background-position: 0% 0%;
+    }
+
 }
 
 .main-outer-wrapper {
-    padding: 100px 130px;
+    padding: 20px;
+}
+
+@media (min-width: 1600px) {
+    .main-outer-wrapper {
+        padding: 100px 130px;
+    }
+
 }
 
 .main1-hero p {
 
-    font-size: 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+@media (min-width: 1024px) {
+    .main1-hero p {
+        font-size: 20px;
+    }
+
+}
+
+.main1-text {
+    width: 50%;
+}
+
+@media (min-width: 900px) {
+    .main1-text {
+        width: 100%;
+    }
+
 }
 
 .main1-text * {
@@ -124,12 +250,21 @@ main section {
 
 .main2-about .main-outer-wrapper {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .main2-about .main-outer-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 
 .main2-img-container {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -139,29 +274,51 @@ main section {
 
 }
 
+@media (min-width: 1024px) {
+    .main2-img-container {
+        width: 40%;
+    
+    }
+}
+
 .main2-text {
-    width: 60%;
-    padding-left: 200px;
+    width: 100%;
+    padding-left: 19%;
     padding-top: 60px;
     background-size: 159%;
     transform: rotate(-1deg);
     z-index: 1;
 }
 
+@media (min-width: 1024px) {
+    .main2-text {
+        width: 60%;
+        padding-left: 12%;
+    
+    }
+}
+
 .main2-text p {
-    line-height: 44px;
-    font-size: 20px;
+    line-height: 37px;
+    font-size: 16px;
+}
+
+@media (min-width: 1300px) {
+    .main2-text p {
+        line-height: 44px;
+        font-size: 20px;
+    }
+
 }
 
 .main2-text h2 {
     margin-bottom: 50px;
-    font-size: 40px;
     font-weight: 300;
     color: #C73659;
 }
 
 .profile-pic {
-    width: 100%;
+    width: 120%;
 }
 
 .main3-servicos {
@@ -176,7 +333,7 @@ main section {
 
 .main3-servicos h2 {
     color: #C73659;
-    font-size: 40px;
+
 }
 
 .main3-servicos h3 {
@@ -192,13 +349,31 @@ main section {
 
 .main3-flexbox {
     display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
+@media (min-width: 1024px) {
+    .main3-flexbox {
+        flex-direction: row;
+    }
+
+}
+
 .servicos {
-    width: 33%;
+    width: 100%;
     margin: 5px;
 }
+
+@media (min-width: 1024px) {
+    .servicos {
+        width: 33%;
+        margin: 5px;
+    }
+
+}
+
+
 
 .main3-flexbox img {
     width: 100px;
@@ -229,7 +404,7 @@ main section {
 
 .main4-consultorio h2 {
     color: rgba(0, 0, 0, 0.699);
-    font-size: 40px;
+
 }
 
 .main4-consultorio p {
@@ -260,7 +435,7 @@ main section {
 
 .main5-contato h2 {
     color: #C73659;
-    font-size: 40px;
+
     margin-top: 0px;
 }
 
