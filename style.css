@@ -390,17 +390,55 @@ list-style-type: none;
     justify-content: flex-end;
 }
 
+@media (max-width: 1024px) {
+    .main4-flexbox {
+        display: block;
+    }
+    
+}
+
 .main4-text {
-    width: 50%;
-    padding: 150px;
+    width: 700px;
+    padding: 50px;
     background-color: #C73659;
     transition: opacity 0.25s ease;
 }
 
-.main4-img {
-    width: 45%;
-    transition: opacity 0.25s ease;
+@media (max-width: 1024px) {
+    .main4-text {
+        text-align: center;
+        width: 100%;
+    }
+    
+
 }
+
+@media (min-width: 1600px) {
+    .main4-text {
+        padding: 150px;
+    }
+    
+
+}
+
+.main4-img {
+    width: 75%;
+    transition: opacity 0.25s ease;
+    background-size: cover;
+}
+
+@media (max-width: 1024px) {
+    .main4-img {
+        width: 100%;
+        min-height: 400px;
+        max-height: 700px;
+        border: 20px solid #C73659;
+        border-top: 50px solid #C73659;
+        background-position: center;
+    }
+
+}
+
 
 .main4-consultorio h2 {
     color: rgba(0, 0, 0, 0.699);
@@ -443,11 +481,21 @@ list-style-type: none;
     width: 50px;
 }
 
+
+
 .main5-flexbox {
     display: flex;
+    flex-direction: row;
     width: 80%;
     justify-content: center;
 
+}
+
+@media (max-width: 600px) {
+    .main5-flexbox {
+    flex-direction: column;
+
+    }
 }
 
 .main5-left, .main5-middle {
@@ -455,14 +503,50 @@ list-style-type: none;
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    .main5-left, .main5-middle {
+        width: 100%;
+        margin: 10px 0px;
+    }
+}
+
 .main5-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 25px;
 }
 
+@media (max-width: 600px) {
+    .main5-container {
+        flex-direction: column;
+    }
+    
+
+}
+
+
+
 .main5-container * {
     margin: 0px 10px;
+}
+
+@media (max-width: 800px) {
+    .main5-container * {
+        margin: 0px 5px;
+    }
+
+}
+
+.main5-contato p {
+    font-size: 16px;
+}
+
+@media (max-width: 800px) {
+    .main5-contato p {
+        font-size: 14px;
+    }
+
 }
 
 .iframe-container {
